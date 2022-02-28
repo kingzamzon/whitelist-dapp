@@ -66,10 +66,10 @@ export default function Home() {
       );
       // call the addAddressToWhitelist from the contract
       const tx = await whitelistContract.addAddressToWhitelist();
-      sefLoading(true);
+      setLoading(true);
       // wait for the transaction to get mined
       await tx.wait();
-      sefLoading(false);
+      setLoading(false);
       // get the updated number of addresses in the whitelist
       await getNumberOfWhitelisted();
       setJoinedWhitelist(true);
@@ -166,7 +166,7 @@ export default function Home() {
       } else {
         return (
           <button onClick={connectWallet} className={styles.button}>
-            COnnect your wallet
+            Connect your wallet
           </button>
         )
       }
